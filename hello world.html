@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // ceate-app을 통해서 프로젝트를 만든후에 확인
+        // import { Fragment } from 'react' ; 
+        // <fragment>처럼 풀네임으로 사용할때에는 import를 해야하며 
+        // <> 빈태그문법으로 사용시 import 안해줘도 react에서 사용가능
+    
+      function MyApp() { // 반드시 하나의 부모요소로 감싸야 하며, 여러요소일경우 ()로 감싸야함
+                         // MyApp 은 컴포넌트임
+        const name = "react";
+        return ( // <>처럼 빈 태그 (fragment)로도 사용 가능
+            <>
+                <h1>Hello, {name} world!</h1>
+                <h2>두번째 줄입니다</h2>
+            </>
+        ) 
+        ;
+      }
+
+      const container = document.getElementById('root'); // 출력할 dom 위치
+      const root = ReactDOM.createRoot(container);
+      root.render(<MyApp />);
+
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this section for a production-ready setup with JSX:
+      https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
+
+      In a larger project, you can use an integrated toolchain that includes JSX instead:
+      https://reactjs.org/docs/create-a-new-react-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      https://reactjs.org/docs/react-without-jsx.html
+    -->
+  </body>
+</html>

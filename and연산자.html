@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+      function MyApp() { // 반드시 하나의 부모요소로 감싸야 하며, 여러요소일경우 ()로 감싸야함
+        const login = false;
+        const user = "성춘향";
+        return ( // <>처럼 빈 태그 (fragment)로도 사용 가능
+            // 조건문 ?(JSX):null 대신 조건문 &&(JSX) 를 이용해서
+            // 거짓일때 dom을 생성하지 않는다.
+            <div>
+              {user === "홍길동" && ( // 조건부작성 {}으로 감싸줘야함
+                  <h1>홍길동입니다</h1>
+              )}
+              <p>내용이 출력되고있습니다</p>
+            </div>
+        );
+      }
+
+      const container = document.getElementById('root'); // 출력할 dom 위치
+      const root = ReactDOM.createRoot(container);
+      root.render(<MyApp />);
+
+    </script>
+
+  </body>
+</html>

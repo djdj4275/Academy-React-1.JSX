@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+      function MyApp() { // 반드시 하나의 부모요소로 감싸야 하며, 여러요소일경우 ()로 감싸야함
+        const name = "react";
+        return ( // <>처럼 빈 태그 (fragment)로도 사용 가능
+            <>
+                <h1>JSX로 접근하는 리액트</h1>
+                <p>
+                    먼저 하나의 태그로 감싸서 전체 내용을 출력합니다 
+                    원하는 대로 html 내용을 작성할수있습니다.
+                </p>
+                <p>vue의 템플릿과 비슷합니다.</p>
+            </>
+        ) 
+        ;
+      }
+
+      const container = document.getElementById('root'); // 출력할 dom 위치
+      const root = ReactDOM.createRoot(container);
+      root.render(<MyApp />);
+
+    </script>
+
+  </body>
+</html>
